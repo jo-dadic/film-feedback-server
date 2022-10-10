@@ -1,8 +1,15 @@
-const path = require("path");
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const data = require(path.join(__dirname, "data.json"));
-const port = process.env.PORT || 3020;
+const data = jsonServer.router("data.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 4000;
+
+server.use(middlewares);
+server.use(data);
+
+server.listen(port, () => {
+	console.log("JSON Server is running");
+});
 
 // CORS fix
 server.use((req, res, next) => {
@@ -141,7 +148,3 @@ const validateRatingInput = (value, attributes) => {
 const buildError = (pointer, detail) => {
 	return { source: { pointer }, detail };
 };
-
-server.listen(port, () => {
-	console.log("JSON Server is running");
-});
