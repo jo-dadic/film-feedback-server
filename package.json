@@ -6,7 +6,7 @@
 		"json-server": "*"
 	},
 	"scripts": {
-		"start": "node ./json-server/server.js --watch",
-		"build": "node ./json-server/server.js --watch"
+		"start": "node ./json-server/server.js",
+		"build": "node ./json-server/server.js"
 	}
 }
