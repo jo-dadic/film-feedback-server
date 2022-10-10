@@ -6,6 +6,6 @@
 		"json-server": "*"
 	},
 	"scripts": {
-		"start": "node server.js"
+		"start": "node server.js --watch"
 	}
 }
