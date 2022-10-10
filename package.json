@@ -1,0 +1,12 @@
+{
+	"name": "film-feedback-server",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"json-server": "*"
+	},
+	"scripts": {
+		"start": "node ./json-server/server.js --watch",
+		"build": "node ./json-server/server.js --watch"
+	}
+}
